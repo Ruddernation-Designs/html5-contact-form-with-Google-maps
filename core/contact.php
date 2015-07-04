@@ -27,3 +27,9 @@ if (!empty($_POST)){
   $name = $_POST["name"];
   $email = $_POST["email"];
   $comment = $_POST["comment"];
+    if($name == "")
+   $data['success'] = false;
+ if (!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)) 
+   $data['success'] = false;
+ if($comment == "")
+   $data['success'] = false;
