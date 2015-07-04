@@ -1,4 +1,8 @@
 <?php
+function eraseData($data) {
+  $data = str_replace(' & ', ' &amp; ', $data);
+  return (get_magic_quotes_gpc() ? stripslashes($data) : $data);
+}
 function multiDimensionalArrayMap($func,$arr) {
   $newArr = array();
   if (!empty($arr)) {
