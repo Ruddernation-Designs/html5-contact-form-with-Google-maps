@@ -4,6 +4,9 @@ function removebadtags($data) {
   $data = preg_replace("/<body/i", "&lt;body",$data);
   $data = preg_replace("/<script/i", "&lt;&#115;cript",$data);
   $data = preg_replace("/onsubmit/i", "&#111;nsubmit",$data);
+  $data = preg_replace("/onmouseover/i", "&#111;nmouseover",$data);
+  $data = preg_replace("/onload/i", "&#111;nload",$data);
+  $data = preg_replace("/onclick/i", "&#111;nclick",$data);
   return strip_tags(trim($data));
 }
 function eraseData($data) {
