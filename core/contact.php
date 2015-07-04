@@ -2,6 +2,8 @@
 function removebadtags($data) {
   $data = preg_replace("/<html/i", "&lt;html",$data);
   $data = preg_replace("/<body/i", "&lt;body",$data);
+  $data = preg_replace("/<script/i", "&lt;&#115;cript",$data);
+  $data = preg_replace("/onsubmit/i", "&#111;nsubmit",$data);
   return strip_tags(trim($data));
 }
 function eraseData($data) {
@@ -27,12 +29,16 @@ if (!empty($_POST)){
   $name = $_POST["name"];
   $email = $_POST["email"];
   $message = $_POST["message"];
-    if($name == "")
+  if($name == "")
    $data['success'] = false;
  if (!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)) 
    $data['success'] = false;
  if($message == "")
    $data['success'] = false;
+ if($data['success'] == true){
+  $message = "Name: $name<br>
+  Email: $email<br>
+  Message: $message";
   $headers = "MIME-Version: 1.0" . "\r\n"; 
   $headers .= "Content-type:text/html; charset=utf-8" . "\r\n"; 
   $headers .= "From: <$emailfrom>" . "\r\n";
