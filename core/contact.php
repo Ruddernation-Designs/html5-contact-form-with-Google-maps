@@ -1,4 +1,9 @@
 <?php
+function removebadtags($data) {
+  $data = preg_replace("/<html/i", "&lt;html",$data);
+  $data = preg_replace("/<body/i", "&lt;body",$data);
+  return strip_tags(trim($data));
+}
 function eraseData($data) {
   $data = str_replace(' & ', ' &amp; ', $data);
   return (get_magic_quotes_gpc() ? stripslashes($data) : $data);
