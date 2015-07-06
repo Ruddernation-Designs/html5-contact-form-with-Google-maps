@@ -4,9 +4,9 @@ $("#send-the-mail").click(function () {
         var name = $('input#name').val();
         var error = false;
         if (name == "" || name == " ") {
-            $('#err-name').show(500);
-            $('#err-name').delay(4000);
-            $('#err-name').animate({
+            $('#error-name').show(500);
+            $('#error-name').delay(4000);
+            $('#error-name').animate({
                 height: 'toggle'
             }, 500, function () {
             });
@@ -15,9 +15,9 @@ $("#send-the-mail").click(function () {
         var emailCompare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/;
         var email = $('input#email').val().toLowerCase(); 
         if (email == "" || email == " " || !emailCompare.test(email)) {
-            $('#err-email').show(500);
-            $('#err-email').delay(4000);
-            $('#err-email').animate({
+            $('#error-email').show(500);
+            $('#error-email').delay(4000);
+            $('#error-email').animate({
                 height: 'toggle'
             }, 500, function () {
             });
@@ -26,9 +26,9 @@ $("#send-the-mail").click(function () {
 
         var comment = $('textarea#comment').val();
         if (comment == "" || comment == " ") {
-            $('#err-comment').show(500);
-            $('#err-comment').delay(4000);
-            $('#err-comment').animate({
+            $('#error-comment').show(500);
+            $('#error-comment').delay(4000);
+            $('#error-comment').animate({
                 height: 'toggle'
             }, 500, function () {
             });
@@ -86,7 +86,7 @@ function initializeMap() {
         zoom: 16, // Change this value to zoom in or out.
         mapTypeId: google.maps.MapTypeId.ROADMAP // This is the road map version, can be changed using the googleapis.
     };
-    var map = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
     var marker = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(lat, lon),
