@@ -11,8 +11,8 @@ $("#send-the-mail").click(function () {
             });
             error = true; 
         }
-        var emailCompare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/; // Syntax to compare against input
-        var email = $('input#email').val().toLowerCase(); // get the value of the input field
+        var emailCompare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/;
+        var email = $('input#email').val().toLowerCase();
         if (email == "" || email == " " || !emailCompare.test(email)) {
             $('#error-email').show(500);
             $('#error-email').delay(4000);
@@ -57,9 +57,9 @@ $("#send-the-mail").click(function () {
         }
         return false;
     });
-   /************************
-    Animate the contact form
-    ***********************/
+   /*
+    Animation for the contact form
+   */
     jQuery('.contact-form').bind('inview', function (event, visible) {
         if (visible == true) {
             jQuery('.contact-form').addClass("animated bounceIn");
@@ -67,8 +67,9 @@ $("#send-the-mail").click(function () {
             jQuery('.contact-form').removeClass("animated bounceIn");
         }
     });
-//You will need this to add your loaction via longitude and latitude on google maps also added the center position on longitude for if you keep the form over the map itself,
-//This also contains the zoom.
+/*
+You will need this to add your loaction via longitude and latitude on google maps also added the center position on longitude for if you keep the form over the map itself,
+This also contains the zoom. */
 function initializeMap() {
 
     var lat = '51.5286416'; //Set your latitude, I've added London by default, not that I live there, ha.
