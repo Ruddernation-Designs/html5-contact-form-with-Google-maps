@@ -1,7 +1,6 @@
-// Mail functions
 $("#send-the-mail").click(function () {
 
-        var name = $('input#name').val();
+        var name = $('input#name').val(); // get the value of the input field
         var error = false;
         if (name == "" || name == " ") {
             $('#error-name').show(500);
@@ -9,37 +8,42 @@ $("#send-the-mail").click(function () {
             $('#error-name').animate({
                 height: 'toggle'
             }, 500, function () {
+                // Animation complete.
             });
-            error = true; 
+            error = true; // change the error state to true
         }
-        var emailCompare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/;
-        var email = $('input#email').val().toLowerCase(); 
+
+        var emailCompare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/; // Syntax to compare against input
+        var email = $('input#email').val().toLowerCase(); // get the value of the input field
         if (email == "" || email == " " || !emailCompare.test(email)) {
             $('#error-email').show(500);
             $('#error-email').delay(4000);
             $('#error-email').animate({
                 height: 'toggle'
             }, 500, function () {
+                // Animation complete.
             });
-            error = true; 
+            error = true; // change the error state to true
         }
 
-        var comment = $('textarea#comment').val();
+
+        var comment = $('textarea#comment').val(); // get the value of the input field
         if (comment == "" || comment == " ") {
             $('#error-comment').show(500);
             $('#error-comment').delay(4000);
             $('#error-comment').animate({
                 height: 'toggle'
             }, 500, function () {
+                // Animation complete.
             });
-            error = true;
+            error = true; // change the error state to true
         }
 
         if (error == false) {
-            var dataString = $('#contact').serialize();
+            var dataString = $('#contact-form').serialize(); // Collect data from form
             $.ajax({
                 type: "POST",
-                url: $('#contact').attr('action'),
+                url: $('#contact-form').attr('action'),
                 data: dataString,
                 timeout: 6000,
                 error: function (request, error) {
@@ -59,14 +63,16 @@ $("#send-the-mail").click(function () {
             });
             return false;
         }
-
-        return false; 
+        return false;
     });
-    jQuery('.contact').bind('inview', function (event, visible) {
+   /************************
+    Animate contact form
+    ***********************/
+    jQuery('.contact-form').bind('inview', function (event, visible) {
         if (visible == true) {
-            jQuery('.contact').addClass("animated bounceIn");
+            jQuery('.contact-form').addClass("animated bounceIn");
         } else {
-            jQuery('.contact').removeClass("animated bounceIn");
+            jQuery('.contact-form').removeClass("animated bounceIn");
         }
     });
 //You will need this to add your loaction via longitude and latitude on google maps also added the center position on longitude for if you keep the form over the map itself,
@@ -86,7 +92,7 @@ function initializeMap() {
         zoom: 16, // Change this value to zoom in or out.
         mapTypeId: google.maps.MapTypeId.ROADMAP // This is the road map version, can be changed using the googleapis.
     };
-    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+    var map = new google.maps.Map(document.getElementById('google-map'), myOptions);
     var marker = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(lat, lon),
