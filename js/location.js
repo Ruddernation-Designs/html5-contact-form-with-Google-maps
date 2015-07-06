@@ -1,6 +1,6 @@
 $("#send-the-mail").click(function () {
 
-        var name = $('input#name').val(); // get the value of the input field
+        var name = $('input#name').val(); 
         var error = false;
         if (name == "" || name == " ") {
             $('#error-name').show(500);
@@ -8,11 +8,9 @@ $("#send-the-mail").click(function () {
             $('#error-name').animate({
                 height: 'toggle'
             }, 500, function () {
-                // Animation complete.
             });
-            error = true; // change the error state to true
+            error = true; 
         }
-
         var emailCompare = /^([a-z0-9_.-]+)@([da-z.-]+).([a-z.]{2,6})$/; // Syntax to compare against input
         var email = $('input#email').val().toLowerCase(); // get the value of the input field
         if (email == "" || email == " " || !emailCompare.test(email)) {
@@ -21,33 +19,27 @@ $("#send-the-mail").click(function () {
             $('#error-email').animate({
                 height: 'toggle'
             }, 500, function () {
-                // Animation complete.
             });
-            error = true; // change the error state to true
+            error = true; 
         }
-
-
-        var comment = $('textarea#comment').val(); // get the value of the input field
+        var comment = $('textarea#comment').val();
         if (comment == "" || comment == " ") {
             $('#error-comment').show(500);
             $('#error-comment').delay(4000);
             $('#error-comment').animate({
                 height: 'toggle'
             }, 500, function () {
-                // Animation complete.
             });
-            error = true; // change the error state to true
+            error = true; 
         }
-
         if (error == false) {
-            var dataString = $('#contact-form').serialize(); // Collect data from form
+            var dataString = $('#contact-form').serialize(); 
             $.ajax({
                 type: "POST",
                 url: $('#contact-form').attr('action'),
                 data: dataString,
                 timeout: 6000,
                 error: function (request, error) {
-
                 },
                 success: function (response) {
                     response = $.parseJSON(response);
@@ -66,7 +58,7 @@ $("#send-the-mail").click(function () {
         return false;
     });
    /************************
-    Animate contact form
+    Animate the contact form
     ***********************/
     jQuery('.contact-form').bind('inview', function (event, visible) {
         if (visible == true) {
@@ -81,12 +73,10 @@ function initializeMap() {
 
     var lat = '51.5286416'; //Set your latitude, I've added London by default, not that I live there, ha.
     var lon = '-0.1015987'; //Set your longitude.
-
     var centerLon = lon - 0.0035;
-
     var myOptions = {
         scrollwheel: false, // if true it will scroll when you scroll the mouse wheel.
-        draggable: false, // if true this will move when you hold the mouse button.
+        draggable: true, // if true this will move when you hold the mouse button.
         disableDefaultUI: true, // Default depending on googleapis
         center: new google.maps.LatLng(lat, centerLon), // this is the addition of the center line, change CenterLon to move the pointer.
         zoom: 16, // Change this value to zoom in or out.
@@ -97,12 +87,9 @@ function initializeMap() {
         map: map,
         position: new google.maps.LatLng(lat, lon),
     });
-
     var infowindow = new google.maps.InfoWindow();
-
     google.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker); // When you click this will show details of the location in question.
     });
-
     infowindow.close(map, marker);
 }
