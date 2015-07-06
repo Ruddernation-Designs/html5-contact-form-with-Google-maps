@@ -1,6 +1,6 @@
 # html5-contact-form-with-Google-maps
 This is a PHP contact form in HTML5/CSS3 with Google maps using the canvas feature,
-This uses the Modernizr and Bootstrap features.
+This uses the Modernizr and Bootstrap features meaning that this contact form is fully responsive.
 
 This is ready for instant use once you change the email addresses in the contact.php in the core folder,
 It can be used as a full page or embed into a existing page, 
