@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <!-- Created by Ruddernation™ 2015 - https://www.ruddernation.com -->
 <html lang="en">
-    <head>
-        <meta charset=utf-8>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Form</title>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
-        <link rel="stylesheet" type="text/css" href="css/contact.css" />
-        </head>
-        <body>
-            <h1>Contact Us</h1>
-                        <p>If you wish to contact us then use the form below please.</p>
-            <div></div> I'll be adding extra div elements and writing the CSS so the form looks nice and looks good to simply embed on any website.
-            Hopefully I'll finish this off tomorrow.
-        <form id="contact" action="core/contact.php">
-            <input type="text" id="name" name="name" placeholder="Enter your name" class="" />
-            <input type="email" name="email" id="email" placeholder="Enter your email" class="" />
-            <textarea name="comment" id="comment" placeholder="Add your message/questions here" class=""></textarea>
-            <button id="send-the-mail" class="message">Send your message</button>
-        </form>
-        <script src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/modernizr.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;callback=initializeMap"></script>
-        <script type="text/javascript" src="js/location.js"></script>
-        </body>
-        </html>
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>contact</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="css/contact.css" />
+</head>
+<body>
+<!-- Contact form start -->
+<div id="contact" class="contact">
+<div class="map-wrapper">
+<div class="google-map" id="google-map">Loading Google map</div>
+<div class="container">
+<div class="row-fluid">
+<div class="span5 contact-form centered">
+<h3>Contact Us!</h3>
+<div id="successSend" class="alert alert-success hidden"><strong>Awesome! Your feedback has been sent</strong></div>
+<div id="errorSend" class="alert alert-error hidden">Opps there was an error!</div>
+        <form id="contact-form" action="core/contact.php">
+                  <input class="span12" type="text" id="name" name="name" placeholder="Enter your name here" />
+                  <div class="error left-align" id="error-name">Please enter your name above</div>
+                  <input class="span12" type="email" name="email" id="email" placeholder="Enter your email here" />
+                  <div class="error left-align" id="error-email">Please enter your email address above</div>
+                  <textarea class="span12" name="comment" id="comment" placeholder="Enter your feedback here"></textarea>
+                  <div class="error left-align" id="error-comment">Please enter your Questions/Feedback above</div>
+                  <button id="send-the-mail" class="message-button">Send</button>
+         </form>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact section end -->
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;callback=initializeMap"></script>
+<script type="text/javascript" src="js/location.js"></script>
+</body>
+</html>
