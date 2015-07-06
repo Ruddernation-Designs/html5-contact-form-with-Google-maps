@@ -29,9 +29,9 @@ if (!empty($_POST)){
   $data['success'] = true;
   $_POST  = multiDimensionalArrayMap('removebadtags', $_POST);
   $_POST  = multiDimensionalArrayMap('erasedata', $_POST);
-  $emailto ="support@ruddernation.com";
-  $emailfrom ="support@ruddernation.com"; 
-  $emailsubject = "Mail from Abbies site";
+  $emailto ="any@email.com"; // This is the email you want the response to go to.
+  $emailfrom ="any@email.com"; // This is to show where the email has come from and to stop errors with spam if using a black list.
+  $emailsubject = "Contact Us!"; // This is the the title for the contact
   $name = $_POST["name"];
   $email = $_POST["email"];
   $comment = $_POST["comment"];
