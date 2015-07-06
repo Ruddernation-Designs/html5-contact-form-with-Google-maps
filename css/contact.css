@@ -37,3 +37,13 @@
     float: none;
     text-align: center;
 }
+.left-align {
+    text-align:left;
+}
+.right-align {
+    text-align:left;
+}
+.error {
+    color: #FF0000;
+    display: none;
+}
