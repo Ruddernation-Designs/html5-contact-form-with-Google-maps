@@ -7,3 +7,5 @@ It can be used as a full page or embed into a existing page,
 Just simply remove the relevant tags and do a few css updates to make it fit the page or with your themes style.
 
 I've also only added the most basic of information needed from the contact form, you could also include location/time/referrer etc, I've also added a few html tags that will be stripped inside the form, you can add more if you wish, This is to combat against XSS attacks.
+<br />
+<a href="http://ruddernation-designs.github.io/contact-with-google-maps/" target="_blank" title="Contact Form Demo">Demo</a>
