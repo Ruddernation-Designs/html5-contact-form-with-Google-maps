@@ -8,4 +8,7 @@ Just simply remove the relevant tags and do a few css updates to make it fit the
 
 I've also only added the most basic of information needed from the contact form, you could also include location/time/referrer etc, I've also added a few html tags that will be stripped inside the form, you can add more if you wish, This is to combat against XSS attacks.
 <br />
-<a href="http://ruddernation-designs.github.io/contact-with-google-maps/" target="_blank" title="Contact Form Demo">Demo</a>
+###<a href="http://ruddernation-designs.github.io/contact-with-google-maps/" target="_blank" title="Contact Form Demo">Demo</a>
+
+I now have this same form live on all of my websites for easy contact.
+###<a href="https://www.ruddernation.com" target="_blank" title="Main website">Live working demo</a>
