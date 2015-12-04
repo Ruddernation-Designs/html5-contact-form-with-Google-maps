@@ -39,12 +39,15 @@ if (!empty($_POST)){
    $data['success'] = false;
  if (!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)) 
    $data['success'] = false;
+   $datetime = date('H:i:s \o\n l jS F Y');
  if($comment == "")
    $data['success'] = false;
  if($data['success'] == true){
-  $message = "Name: $name<br />
-  Email: $email<br />
-  Comment: $comment";
+  $message = "Name: $name<br/>
+  Email: $email<br/>
+  Comment: $comment<br/>
+  Date and Time: $datetime<br/>";
+  
   $headers = "MIME-Version: 1.0" . "\r\n"; 
   $headers .= "Content-type:text/html; charset=utf-8" . "\r\n"; 
   $headers .= "From: <$emailfrom>" . "\r\n";
