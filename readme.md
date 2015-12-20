@@ -1,4 +1,5 @@
 # html5-contact-form-with-Google-maps
+### Update, I've now added Google's reCaptcha to the form, To submit the user must complete the reCaptcha, you will need to sign up to the recaptcha to get your site key and your secret key at<a href="https://www.google.com/recaptcha/intro/index.html" target="_blank"> Google</a>.
 This is a PHP contact form in HTML5/CSS3 with Google maps using the canvas feature,
 This uses the Modernizr and Bootstrap features meaning that this contact form is fully responsive.
 
