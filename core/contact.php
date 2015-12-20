@@ -35,6 +35,10 @@ if (!empty($_POST)){
   $name = $_POST["name"];
   $email = $_POST["email"];
   $comment = $_POST["comment"];
+  $captcha = $_POST['g-recaptcha-response'];
+  $response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=Add-your-secret-key-here&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']), true);
+  if($captcha == "")
+  $data['success'] = false;
   if($name == "")
    $data['success'] = false;
  if (!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)) 
