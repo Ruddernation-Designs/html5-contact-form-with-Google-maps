@@ -13,3 +13,4 @@ I've also only added the most basic of information needed from the contact form,
 
 I now have this same form live on all of my websites for easy contact.
 ###<a href="https://www.ruddernation.com" target="_blank" title="Main website">Live working demo</a>
+###<a href="https://github.com/Ruddernation-Designs/ruddernation-designs.github.io/wiki" target="_blank">Wiki</a>
