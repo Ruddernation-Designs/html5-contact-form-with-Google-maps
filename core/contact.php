@@ -30,12 +30,12 @@ if (!empty($_POST)){
   $_POST  = multiDimensionalArrayMap('removebadtags', $_POST);
   $_POST  = multiDimensionalArrayMap('erasedata', $_POST);
   $emailto ="any@email.com";
-  $emailFrom = $email = $_POST["email"];
+  $emailFrom = $email = filter_input(INPUT_POST,"email");
   $emailsubject = "Contact Us!";
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $comment = $_POST["comment"];
-  $captcha = $_POST['g-recaptcha-response'];
+  $name = filter_input(INPUT_POST,"name");
+  $email = filter_input(INPUT_POST,"email");
+  $comment = filter_input(INPUT_POST,"comment");
+  $captcha = filter_input(INPUT_POST,'g-recaptcha-response');
   $response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=Add-your-secret-key-here&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']), true);
   if($captcha == "")
   $data['success'] = false;
